@@ -1,0 +1,38 @@
+﻿<view class="admin-page">
+    <view class="tab-bar">
+        <block wx:for="{{tabs}}" wx:key="key">
+            <view class="tab-item {{item.key === statusFilter ? 'active' : ''}}" data-key="{{item.key}}" bindtap="changeTab">
+                {{item.label}}
+            </view>
+        </block>
+    </view>
+
+    <view wx:if="{{loading}}" class="loading">加载中...</view>
+    <view wx:elif="{{goodsList.length === 0}}" class="empty">暂无记录</view>
+    <block wx:else>
+        <block wx:for="{{goodsList}}" wx:key="_id">
+            <view class="card">
+                <view class="card-header" data-id="{{item._id}}" bindtap="viewDetail">
+                    <image wx:if="{{item.cover}}" class="cover" src="{{item.cover}}" mode="aspectFill" />
+                    <view wx:else class="cover placeholder">无图</view>
+                    <view class="card-info">
+                        <view class="title">{{item.title}}</view>
+                        <view class="meta">价格：￥{{item.price}}</view>
+                        <view class="meta">发布人：{{item.username}}</view>
+                        <view class="meta">发布时间：{{item.displayTime}}</view>
+                    </view>
+                </view>
+                <view class="card-footer" wx:if="{{statusFilter === 'pending'}}">
+                    <button class="approve" data-id="{{item._id}}" bindtap="approve" size="mini">通过</button>
+                    <button class="reject" data-id="{{item._id}}" bindtap="reject" size="mini">驳回</button>
+                </view>
+                <view class="card-footer status" wx:elif="{{statusFilter === 'approved'}}">
+                    <text>已通过</text>
+                </view>
+                <view class="card-footer status" wx:else>
+                    <text>已驳回</text>
+                </view>
+            </view>
+        </block>
+    </block>
+</view>

@@ -1,0 +1,92 @@
+.container-login {
+    height: 100vh;
+    background:linear-gradient(to bottom,#acf7e6,#d0f0e9);
+    display: flex;
+    justify-content: center;
+
+    // align-items: center;
+    form {
+        height: 600rpx;
+        width: 80%;
+        margin-top:200rpx;
+        background-color: #fff;
+        box-shadow: 0rpx 0rpx 10rpx rgba(0,0,0,.1);
+        border-radius: 20rpx;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        padding:0rpx 40rpx;
+        view {
+            margin: 30rpx 0rpx;
+
+            &:first-child {
+                width: 100%;
+                text-align: center;
+
+                font: {
+                    size: 38rpx;
+                    weight: 700
+                }
+            }
+
+            &:nth-child(2),
+            &:nth-child(3) {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 20rpx 0rpx;
+
+                input {
+                    width: 80%;
+                    height: 70rpx;
+                    border: 1px solid #ddd;
+                    // border-radius: 20rpx;
+                    text-indent: 1em;
+                }
+            }
+            &:nth-child(3){
+                position: relative;
+                image{
+                    position:absolute;
+                    height:40rpx;
+                    width:40rpx;
+                    right:40rpx;
+                    top:28%;
+                    z-index: 999;
+                    
+                }
+            }
+
+            &:nth-child(4) {
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                width: 100%;
+                height: 70rpx;
+
+                label {
+                    font-size: 28rpx;
+                }
+            }
+
+            &:nth-child(5) {
+                display: flex;
+                justify-content: space-between;
+                width:100%;
+                button {
+                    width: 35%;
+                    background-color: #27ba9b;
+                }
+            }
+        }
+    }
+    navigator{
+        font-size:26rpx;
+        font-weight: 700;
+        color:#27ba9b;
+        width:230rpx;
+        text-align: center;
+        float: right;
+    }
+}

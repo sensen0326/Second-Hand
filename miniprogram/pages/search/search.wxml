@@ -1,0 +1,38 @@
+<!-- 搜索区域 -->
+<view class="container">
+    <view class="search">
+        <view class="container_search">
+            <image class="search-icon" src="../../images/icons/sousuo.png"></image>
+            <input type="search" model:value="{{inputValue}}" bindconfirm="addsearchHistory" bindinput="toshowHistory" focus="true" placeholder="请输入商品名称..." />
+        </view>
+    </view>
+    <view class="search_history" wx:if="{{showHistory}}">
+        <view class="search_history_content">
+            <view class="serach_title">
+                <view>搜索记录</view>
+                <view bindtap="delstorage">
+                    <image src="../../images/icons/shanchu.png" />
+                </view>
+            </view>
+            <view class="search_content">
+                <view class="search_item" wx:for="{{searchHistory}}" wx:key="uniqueKey">
+                    <text bindtap="sendValue" data-param="{{item}}">{{item}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="goodsView" wx:if="{{showView}}">
+        <view class="goods-title">
+            <view class="nav_left_items {{news ? 'active' : ''}}" bindtap="tonew">最新发布</view>
+            <view class="nav_left_items {{hot ? 'active' : ''}}" bindtap="tohot">热度排序</view>
+        </view>
+        <view class="goodsShowView">
+            <view class="goods-item" wx:for="{{goodsList}}" wx:key="id" bindtap="toDetail" data-param="{{item._id}}">
+                <image class="goods-img" src="{{item.imageIds[0]}}"></image>
+                <text class="goods-name">{{item.title}}</text>
+                <text class="goods-description">{{item.description}}</text>
+                <text class="goods-price" style="display:flex;justify-content: space-between;width:100%;align-items: center;"><text>￥{{item.price}}</text><text style="color:rgb(114, 113, 113);font-size:24rpx;margin-left:50rpx">热度:{{item.hit}}</text></text>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,18 @@
+<view class="container-campus">
+    <view class="campus-nav">
+        <view bindtap="totrends" class="campusnav {{classtrends ?'active':''}}">社区动态</view>
+        <view bindtap="tolife" class="campusnav {{classlife ?'active':''}}">生活指南</view>
+    </view>
+    <view class="campus-view">
+        <view wx:for="{{newGoodsList}}" bindtap="countView"  wx:key="index" class="goods-item" data-param="{{item._id}}">
+            <view class="goods-information">
+                <view class="goods-item-title"><view>{{item.title}}</view><view>{{item.newdegree}}</view></view>
+                <view>{{item.hit}}次浏览</view>
+                <view>{{item.showtime}}</view>
+            </view>
+            <view class="goods-img">
+                <image src="{{item.imageIds[0]}}" />
+            </view>
+        </view>
+    </view>
+</view>

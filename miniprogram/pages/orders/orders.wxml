@@ -1,0 +1,20 @@
+﻿<view class="orders-page">
+  <view class="tabs">
+    <view class="tab" data-tab="buy" bindtap="switchTab" wx:class="{{tab==='buy'?'active':''}}">我买到的</view>
+    <view class="tab" data-tab="sell" bindtap="switchTab" wx:class="{{tab==='sell'?'active':''}}">我卖出的</view>
+  </view>
+  <view wx:if="{{loading}}" class="loading">加载中...</view>
+  <block wx:for="{{orders}}" wx:key="id">
+    <view class="order-card">
+      <image wx:if="{{item.cover}}" src="{{item.cover}}" class="order-cover" mode="aspectFill" />
+      <view class="order-info">
+        <view class="order-title">{{item.title}}</view>
+        <view class="order-price">￥{{item.price}}</view>
+        <view class="order-status">状态：{{item.status}}</view>
+        <view class="order-time">下单时间：{{item.createdAt}}</view>
+      </view>
+      <button wx:if="{{item.status !== 'completed'}}" size="mini" type="primary" data-id="{{item.id}}" bindtap="complete">标记完成</button>
+    </view>
+  </block>
+  <view wx:if="{{!loading && (!orders || orders.length===0)}}" class="empty">暂无订单</view>
+</view>

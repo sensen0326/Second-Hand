@@ -1,0 +1,23 @@
+<!-- 左侧栏 -->
+<view class="nav_left">
+    <view wx:for="{{navList}}" wx:key="index" class="nav_left_items {{curNav == item.id ? 'active' : ''}}" bindtap="switchRightTab" data-id="{{item.id}}">
+        {{item.name}}
+    </view>
+</view>
+<!-- 右侧栏 -->
+<view class="nav_right">
+    <view>
+        <block wx:for="{{rightList}}" wx:key="id">
+            <view class="nav_right_items" bindtap="toDetail" data-param="{{item._id}}">
+                <image src="{{item.imageIds[0]}}"></image>
+                <view class="content">
+                    <text class="names">{{item.title}}</text>
+                    <text class="newdegree">{{item.newdegree}}</text>
+                    <text class="description">{{item.description}}</text>
+                    <text class="prices">￥{{item.price}}</text>
+                </view>
+            </view>
+        </block>
+        <view class="noGoods" wx:if="{{showToast}}">暂无商品~</view>
+    </view>
+</view>

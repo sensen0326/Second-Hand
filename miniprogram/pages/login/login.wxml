@@ -1,0 +1,15 @@
+<view class="container-login">
+    <form bindsubmit="login">
+        <view>登录</view>
+        <view><label for="">手机号</label><input maxlength="11" name="username" type="text" placeholder="请输入手机号..." /></view>
+        <view><label for="">密码</label><input maxlength="14"  name="password" type="{{ passwordType ?'password':'text'}}" placeholder="请输入密码..." /><image src="{{ passwordType ?'../../images/icons/yincang.png':'../../images/icons/xianshi.png'}}" bindtap="changeType"  /></view>
+        <view>
+            <checkbox class="login-checkbox" bindtap="togglechecked"  checked="{{ischecked ? true: false}}"></checkbox><label for="">我已同意隐私条款和服务</label>
+        </view>
+        <view>
+            <button form-type="submit">登录</button>
+            <button form-type="reset">重置</button>
+        </view>
+        <navigator url="/pages/register/register">还未注册? 去注册</navigator>
+    </form>
+</view>

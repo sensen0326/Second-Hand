@@ -1,0 +1,37 @@
+<view class="container-campus">
+    <view class="campus-nav">
+        <view bindtap="toup" class="campusnav {{classup ?'active':''}}">在卖</view>
+        <view bindtap="todown" class="campusnav {{classdown ?'active':''}}">已下架</view>
+    </view>
+    <view class="campus-view">
+        <view wx:for="{{newGoodsList}}" wx:key="index" wx:if="{{classup}}" class="goods-item">
+            <button bindtap="delgoods" data-param="{{item._id}}">下架商品</button>
+            <view class="goods-information">
+                <view class="goods-item-title">
+                    <view>{{item.title}}</view>
+                    <view>{{item.newdegree}}</view>
+                </view>
+                <view>{{item.showtime}}</view>
+                <view class="status-tag" wx:if="{{item.status === 'pending'}}">待审核</view>
+                <view class="status-tag rejected" wx:if="{{item.status === 'rejected'}}">已驳回</view>
+            </view>
+            <view class="goods-img">
+                <image src="{{item.imageIds[0]}}" />
+            </view>
+        </view>
+        <view wx:for="{{downGoodsList}}" wx:key="index" wx:if="{{!classup}}" class="goods-item">
+            <view class="shopDown" style="color:red">商品已下架</view>
+            <view class="goods-information">
+                <view class="goods-item-title">
+                    <view>{{item.title}}</view>
+                    <view>{{item.newdegree}}</view>
+                </view>
+                <view>{{item.showtime}}</view>
+            </view>
+            <view class="goods-img">
+                <image src="{{item.imageIds[0]}}" />
+            </view>
+        </view>
+        <view class="noPost" wx:if="{{isShow}}">{{contents}}</view>
+    </view>
+</view>

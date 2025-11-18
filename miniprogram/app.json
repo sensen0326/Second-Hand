@@ -1,0 +1,64 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/register/register",
+        "pages/login/login",
+        "pages/center/center",
+        "pages/orders/orders",
+        "pages/trand/trand",
+        "pages/detail/detail",
+        "pages/person/person",
+        "pages/admin/admin",
+        "pages/release/release",
+        "pages/campus/campus",
+        "pages/search/search",
+        "pages/category/category"
+    ],
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#27ba9b",
+        "navigationBarTitleText": "二手交易平台",
+        "navigationBarTextStyle": "black"
+    },
+    "sitemapLocation": "sitemap.json",
+    "style": "v2",
+    "lazyCodeLoading": "requiredComponents",
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "images/icons/shouye.png",
+                "selectedIconPath": "images/icons/shouye-active.png"
+            },
+            {
+                "pagePath": "pages/category/category",
+                "text": "分类",
+                "iconPath": "images/icons/fenlei.png",
+                "selectedIconPath": "images/icons/fenlei-active.png"
+            },
+            {
+                "pagePath": "pages/release/release",
+                "text": "发闲置",
+                "iconPath": "images/icons/tianjia.png",
+                "selectedIconPath": "images/icons/tianjia-active.png"
+            },
+            {
+                "pagePath": "pages/campus/campus",
+                "text": "社区",
+                "iconPath": "images/icons/shequ.png",
+                "selectedIconPath": "images/icons/shequ-active.png"
+            },
+            {
+                "pagePath": "pages/center/center",
+                "text": "我的",
+                "iconPath": "images/icons/wode.png",
+                "selectedIconPath": "images/icons/wode-active.png"
+            }
+        ],
+        "color": "#333333",
+        "selectedColor": "#27ba9b",
+        "backgroundColor": "#ffffff"
+    }
+}

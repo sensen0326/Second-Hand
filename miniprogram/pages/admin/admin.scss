@@ -1,0 +1,113 @@
+﻿.admin-page {
+    min-height: 100vh;
+    padding: 24rpx;
+    box-sizing: border-box;
+    background: #f5f6f7;
+}
+
+.tab-bar {
+    display: flex;
+    background: #ffffff;
+    border-radius: 16rpx;
+    margin-bottom: 32rpx;
+    overflow: hidden;
+    box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.04);
+}
+
+.tab-item {
+    flex: 1;
+    text-align: center;
+    padding: 24rpx 0;
+    font-size: 28rpx;
+    color: #666666;
+}
+
+.tab-item.active {
+    color: #27ba9b;
+    font-weight: 600;
+    border-bottom: 4rpx solid #27ba9b;
+}
+
+.loading,
+.empty {
+    text-align: center;
+    color: #999999;
+    padding: 120rpx 0;
+    font-size: 28rpx;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 16rpx;
+    padding: 24rpx;
+    margin-bottom: 32rpx;
+    box-shadow: 0 12rpx 32rpx rgba(0, 0, 0, 0.06);
+}
+
+.card-header {
+    display: flex;
+    gap: 24rpx;
+    align-items: flex-start;
+}
+
+.cover {
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 12rpx;
+    background: #f0f3f5;
+}
+
+.cover.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a0a0a0;
+    font-size: 26rpx;
+}
+
+.card-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12rpx;
+}
+
+.title {
+    font-size: 32rpx;
+    font-weight: 600;
+    color: #333333;
+}
+
+.meta {
+    font-size: 26rpx;
+    color: #666666;
+}
+
+.card-footer {
+    margin-top: 24rpx;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20rpx;
+}
+
+.card-footer.status {
+    justify-content: flex-start;
+    color: #999999;
+    font-size: 26rpx;
+}
+
+button.approve {
+    background-color: #27ba9b;
+    color: #ffffff;
+}
+
+button.reject {
+    background-color: #f56c6c;
+    color: #ffffff;
+}
+
+button.approve,
+button.reject {
+    border-radius: 999rpx;
+    padding: 0 32rpx;
+}

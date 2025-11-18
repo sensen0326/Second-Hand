@@ -1,0 +1,34 @@
+<view class="container-detail">
+    <view class="goods-name">
+        <text>商品名称:</text>
+        <text>{{goodsDetailList.title}}</text>
+    </view>
+    <view class="goods-newdegree">
+        <text>新旧程度:</text>
+        <text>{{goodsDetailList.newdegree}}</text>
+    </view>
+    <view class="goods-description">
+        <text>商品描述:</text>
+        <text>{{goodsDetailList.description}}</text>
+    </view>
+    <view class="goods-imgs">
+        <text>商品图片:</text>
+        <view class="imgs-container">
+            <view class="imgs-item" wx:for="{{imageIds}}" wx:key="index">
+                <image src="{{item}}" mode="aspectFill" data-src="{{item}}" bindtap="previewImage"/>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{goodsDetailList.videoUrl}}" class="goods-video">
+        <text>商品视频:</text>
+        <video src="{{goodsDetailList.videoUrl}}" controls enable-danmu="false" show-center-play-btn="true"></video>
+    </view>
+    <view class="goods-tel">
+        <text>卖家联系电话:</text>
+        <text selectable="true">{{goodsDetailList.tel}}</text>
+    </view>
+    <view class="goods-actions">
+        <button wx:if="{{canBuy}}" type="primary" bindtap="createOrder">我想购买</button>
+        <button wx:if="{{canComplete}}" type="warn" bindtap="completeOrder">标记交易完成</button>
+    </view>
+</view>

@@ -1,0 +1,51 @@
+<view class="container-release">
+    <form bindsubmit="addData">
+        <view class="form-title">
+            <label for="">标题</label>
+            <input type="text" name="title" value="{{title}}" placeholder="请输入商品标题..." />
+        </view>
+        <view class="form-upload">
+            <textarea auto-height name="issus" value="{{issus}}" placeholder="请描述商品..." />
+            <button bindtap="uploadImage">
+                <image src="../../images/icons/camera.png" mode="" />
+            </button>
+            <view class="previewImg" wx:if="{{uploadedImagePaths.length > 0}}">
+                <view wx:for="{{uploadedImagePaths}}" wx:key="index">
+                    <image src="{{item}}"></image>
+                    <text bindtap="deleteImage"  data-index="{{index}}">x</text>
+                </view>
+            </view>
+        </view>
+        <view class="form-price">
+            <label for="">价格</label>
+            <input type="text" name="price" value="{{price}}" />
+        </view>
+        <!-- 分类 -->
+        <view class="form-Category">
+            <label for="">分类</label>
+            <view class="dropdown">
+                <view class="dropdown-title" bindtap="toggleDropdown">{{selectedCategory? selectedCategory : '请选择分类'}}</view>
+                <view class="dropdown-content" wx:if="{{showDropdown}}">
+                    <view wx:for="{{categoryList}}" wx:key="index" class="dropdown-item" bindtap="selectClass" data-param="{{item.className}}">{{item.className}}</view>
+                </view>
+            </view>
+        </view>
+        <!-- 新旧程度 -->
+        <view class="form-newdegree">
+            <label for="">新旧程度</label>
+            <view class="dropdown">
+                <view class="dropdown-title" bindtap="togglenewdegree">{{selectednewdegree? selectednewdegree : '请选择新旧程度'}}</view>
+                <view class="dropdown-content" wx:if="{{shownewdegree}}">
+                    <view wx:for="{{newdegreeList}}" wx:key="index" class="dropdown-item" bindtap="selectnewdegree" data-params="{{item.newdegreeName}}">{{item.newdegreeName}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="form-tel">
+            <label for="">联系方式</label>
+            <input type="text" name="tel" value="{{tel}}" maxlength="11" placeholder="请输入联系方式..." />
+        </view>
+        <view class="form-post">
+            <button form-type="submit">立即发布</button>
+        </view>
+    </form>
+</view>

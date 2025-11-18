@@ -1,0 +1,12 @@
+<view class="container-register">
+    <form bindsubmit="onRegister">
+        <view>注册</view>
+        <view><label for="">手机号</label><input maxlength="11" name="tel" type="text" placeholder="请输入手机号..." /></view>
+        <view><label for="">密码</label><input name="pwd" maxlength="14" type="{{ passwordType ?'password':'text'}}" placeholder="请输入密码..." /><image src="{{ passwordType ?'../../images/icons/yincang.png':'../../images/icons/xianshi.png'}}" bindtap="changeType"  /></view>
+        <view><label for="">确认密码</label><input maxlength="14" name="comfirmPwd" type="password" placeholder="请输入密码..." /></view>
+        <view>
+            <button form-type="submit">注册</button>
+            <button form-type="reset">重置</button>
+        </view>
+    </form>
+</view>

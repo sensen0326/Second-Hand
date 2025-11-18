@@ -1,0 +1,48 @@
+<view class="container-person">
+    <view>
+        <view>头像</view>
+        <view bindtap="upAvator">
+            <image src="{{userData.avator}}" mode="" />
+        </view>
+    </view>
+    <view>
+        <view>昵称</view>
+        <view><input type="text" disabled="{{disable}}"  model:value="{{userData.uname}}" /></view>
+    </view>
+    <view>
+        <view>个性签名</view>
+        <view><input type="text" disabled="{{disable}}"  model:value="{{userData.signature}}" /></view>
+    </view>
+    <view>
+        <view>联系电话</view>
+        <view><input type="text" disabled="{{disable}}"  model:value="{{userData.tel}}" /></view>
+    </view>
+    <view class="function">
+        <button bindtap="showForm">编辑</button>
+        <button bindtap="outlogin">退出登录</button>
+        <button wx:if="{{canReview}}" bindtap="toAdmin">审核中心</button>
+    </view>
+
+
+    <!-- 个人信息表单 -->
+    <view class="person-form" wx:if="{{showform}}">
+        <form class="From" bindsubmit="updateUser">
+            <view class="Form-item">
+                <view>昵称</view>
+                <view><input type="text" name="uname" placeholder="填写昵称" model:value="{{userData.uname}}" /></view>
+            </view>
+            <view class="Form-item">
+                <view>个性签名</view>
+                <view><input type="text" name="signature" placeholder="请填写自己的个性签名吧" model:value="{{userData.signature}}"/></view>
+            </view>
+            <view class="Form-item">
+                <view>联系电话</view>
+                <view><input type="text" name="tel" placeholder="填写电话" model:value="{{userData.tel}}" /></view>
+            </view>
+            <view class="Form-item"> 
+                <button form-type="submit">确认</button>
+                <button bindtap="concelForm">取消</button>
+            </view>
+        </form>
+    </view>
+</view>

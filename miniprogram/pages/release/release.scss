@@ -1,0 +1,160 @@
+.container-release {
+    margin-top: 25rpx;
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    form {
+        width: 90%;
+        height: auto;
+
+        // background-color: rgb(201, 245, 243);
+        .form-title,
+        .form-price,
+        .form-tel {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e2e2e2;
+            height: 100rpx;
+            width: 100%;
+
+            label {
+                width: 30%;
+            }
+
+            input {
+                font-size: 28rpx;
+                width: 70%;
+            }
+        }
+
+        .form-upload {
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid #e2e2e2;
+
+            textarea {
+                margin-top: 40rpx;
+            }
+
+            button {
+                margin-top: 40rpx;
+                margin-left: 0rpx;
+                height: 160rpx;
+                width: 160rpx;
+                background-color: #eaebeb;
+                position: relative;
+                margin-bottom: 30rpx;
+
+                image {
+                    height: 60rpx;
+                    width: 60rpx;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin-left: -30rpx;
+                    margin-top: -30rpx;
+                }
+            }
+            .previewImg{
+                height:auto;
+                width:100%;
+                display: flex;
+                justify-content: start;
+                flex-wrap: wrap;
+                view{
+                    height:180rpx;
+                    width:180rpx;
+                    position: relative;
+                    margin:10rpx;
+                    padding:10rpx;
+                    border:2rpx solid;
+
+                    image{
+                        height:180rpx;
+                        width:180rpx;
+                    }
+                    text{
+                        position: absolute;
+                        top:0rpx;
+                        right:0rpx;
+                        height:30rpx;
+                        width:30rpx;
+                        line-height: 20rpx;
+                        text-align: center;
+                        background-color: rgba(194, 194, 194,.3);
+                    }
+                }
+            }
+        }
+
+        .form-Category,
+        .form-newdegree {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 120rpx;
+            border-bottom: 1px solid #e2e2e2;
+            margin-bottom: 20rpx;
+
+            .dropdown-title {
+                color: #808080;
+                font-size: 29rpx;
+            }
+
+            label {
+                width: 30%;
+            }
+
+            .dropdown {
+                width: 70%;
+                position: relative;
+
+                .dropdown-content {
+                    position: absolute;
+                    top: 50rpx;
+                    font-size: 28rpx;
+                    left: -35rpx;
+                    background-color: #ffffff;
+                    box-shadow: 0px 0px 10px turquoise;
+                    text-align: center;
+                    width: 200rpx;
+                    color: black;
+                    height: 400rpx;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    z-index: 999;
+                }
+            }
+        }
+    }
+
+    .form-newdegree {
+        .dropdown {
+            .dropdown-content {
+                height: 280rpx !important;
+                left: 0rpx !important;
+            }
+        }
+    }
+
+    .form-post {
+        height: 90rpx;
+        width: 100%;
+        margin-top: 50rpx;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // border-radius: 20rpx;
+        button {
+            width: 100%;
+            background-color: #27ba9b;
+            border-radius: 40rpx;
+            color: #fff;
+            font-weight: 500;
+        }
+    }
+}

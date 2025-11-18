@@ -1,0 +1,62 @@
+<view class="container">
+    <!-- 搜索功能 -->
+    <view class="container_search" bindtap="toSearch" show-keyboard="false">
+        <image class="search-icon" src="../../images/icons/sousuo.png"></image>
+        <input type="search" disabled="true" placeholder="请输入商品名称..." />
+    </view>
+    <!-- 轮播图 -->
+    <swiper class="repeat-play" autoplay indicator-dots indicator-active-color="#77f480" interval="2000" circular indicator-color="gray">
+        <block wx:for="{{tus}}" wx:key="index">
+            <swiper-item class="item">
+                <image class="repeat-image" src="{{item.fileID}}" mode="widthFix"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+    <!-- 九宫格功能 -->
+    <view class="main">
+        <block wx:for="{{list}}" wx:key="id">
+            <view class="container1" bindtap="toCategory" data-param="{{item.id}}">
+                <image src="{{item.fileID}}" mode="" />
+                <text>{{item.name}}</text>
+            </view>
+        </block>
+    </view>
+    <!-- 群体分区-->
+    <view class="people">
+        <view bindtap="toCategory" data-param="7">
+            <image class="people-item" src="cloud://cloud1-4gmnau6q4b776a94.636c-cloud1-4gmnau6q4b776a94-1380392261/jiugognge/7.jpg" />
+            <text>男生专区</text>
+        </view>
+        <view bindtap="toCategory" data-param="8">
+            <image class="people-item" src="cloud://cloud1-4gmnau6q4b776a94.636c-cloud1-4gmnau6q4b776a94-1380392261/jiugognge/8.jpg" />
+            <text>女生专区</text>
+        </view>
+    </view>
+    <!-- 商品展示区 -->
+    <view class="goods">
+        <view class="goods-title">推荐</view>
+        <view class="goods-item" wx:for="{{goodsList}}" wx:key="index" bindtap="toDetail" data-param="{{item._id}}">
+            <image class="goods-img" src="{{item.imageIds[0]}}"></image>
+            <text class="goods-name">{{item.title}}</text>
+            <text class="goods-price">￥{{item.price}}</text>
+            <view class="goods-business">
+                <view>
+                    <image src="{{item.avatorImg}}" />
+                </view>
+                <text>{{item.username}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="touchBottom" wx:if="{{prompt}}">滑到底了~</view>
+
+
+    <!-- 客服和联系电话 -->
+    <view class="kefu">
+        <button open-type="contact" class="row" >
+            <image src="../../images/kefu.png" mode="" />
+        </button>
+    </view>
+    <view class="telphone" catchtap='tels'>
+        <image src="../../images/telphone.png" />
+    </view>
+</view>

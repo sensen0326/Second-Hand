@@ -1,0 +1,11 @@
+.orders-page { padding: 12px; }
+.tabs { display: flex; margin-bottom: 12px; }
+.tab { flex: 1; text-align: center; padding: 8px 0; border-bottom: 2px solid #eee; }
+.tab.active { border-color: #27ba9b; color: #27ba9b; font-weight: 600; }
+.order-card { display: flex; align-items: center; background: #fff; padding: 10px; margin-bottom: 10px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.order-cover { width: 80px; height: 80px; border-radius: 4px; margin-right: 10px; }
+.order-info { flex: 1; }
+.order-title { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.order-price { color: #e54d42; margin-bottom: 4px; }
+.order-status, .order-time { color: #666; font-size: 12px; }
+.loading, .empty { text-align: center; color: #888; margin-top: 20px; }
