@@ -1,0 +1,46 @@
+# =================================================
+# Git Ignore for WeChat Mini Program + Node Projects
+# =================================================
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build outputs
+dist/
+build/
+miniprogram/
+miniprogram_npm/
+unpackage/
+.eslintcache
+.cache/
+.temp/
+.vite/
+
+# IDE / Editor
+.idea/
+.vscode/
+*.code-workspace
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Temp files
+*.tmp
+*.temp
+
+# Optional: remove environment files (如果你用 dotenv)
+.env
+.env.*
+
+.history/
